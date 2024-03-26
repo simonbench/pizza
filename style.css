@@ -1,0 +1,445 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+}
+:root{
+    --logo: #c51010;
+    --text: #e8ae10;
+}
+img{
+    width: 100%;
+}
+/*body{
+    background: white;
+    color: black;
+}*/
+body.active{
+    background: black;
+    color: white;
+}
+.btn{
+    background: black;
+    color: white;
+    border-radius: 7px;
+    padding: 10px 15px;
+    margin-top: 20px;
+    display: inline-block;
+    transition: .4s ease-in-out;
+}
+.btn:hover{
+    background: var(--text);
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 99999;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px 20px 100px;
+}
+nav.active{
+    box-shadow: 0 1px 5px rgba(0, 0, 0, .3);
+    background: white;
+}
+nav .logo{
+    color: var(--logo);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+nav .menu{
+    display: flex;
+    column-gap: 2rem;
+}
+nav .menu a{
+    position: relative;
+    color: black;
+    font-weight: 600;
+    transition: .4s ease-in-out;
+}
+nav .menu a.test{
+    color: white;
+}
+nav .menu a.active{
+    color: orangered;
+}
+nav .menu a:hover{
+    color: orangered;
+}
+nav #lune{
+    color: white;
+    background: var(--text);
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    /*position: absolute;
+    right: 115px;*/
+    transition: .4s ease-in-out;
+}
+nav #lune:hover{
+    background: orangered;
+}
+nav .burger{
+    display: none;
+}
+section{
+    padding: 50px 130px;
+}
+#header{
+    min-height: 100vh;
+    width: 100%;
+    /*max-width: 960px;*/
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    justify-content: center;
+    align-items: center;
+    /*margin: 0 auto;*/
+}
+#header .text p{
+    color: var(--text);
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+#header .text h1{
+    font-size: clamp(27px, 5vw, 50px);
+}
+#header .text h1 span{
+    color: var(--text);
+}
+#about{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    grid-gap: 0 8rem;
+    justify-content: center;
+    align-items: center;
+}
+#about .image img{
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    /*width: 400px;*/
+}
+#about .text span{
+    color: var(--text);
+    font-weight: 500;
+}
+#about .text h1{
+    font-size: clamp(25px, 4vw, 35px);
+    margin-bottom: 20px;
+}
+#menu .titles{
+    text-align: center;
+    margin-bottom: 30px;
+}
+#menu .titles span{
+    color: var(--text);
+    font-weight: 500;
+}
+#menu .titles h1{
+    font-size: clamp(25px, 4vw, 40px);
+}
+#menu .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    grid-gap: 3rem 1rem;
+    justify-content: center;
+    align-items: center;
+}
+#menu .container .cards{
+    position: relative;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .2);
+    border-radius: 7px;
+    height: 409px;
+    /*width: 100%;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+#menu .container .cards span{
+    color: var(--text);
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+#menu .container .cards .price{
+    color: black;
+    font-size: 1rem;
+    margin: 0;
+}
+#menu .container .cards #cart{
+    position: absolute;
+    color: white;
+    background: var(--text);
+    top: 15px;
+    right: 15px;
+    padding: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: .4s ease-in-out;
+}
+#menu .container .cards #cart:hover{
+    background: var(--logo);
+}
+#services .titles{
+    text-align: center;
+    margin-bottom: 30px;
+}
+#services .titles span{
+    color: var(--text);
+    font-weight: 600;
+}
+#services .titles h1{
+    font-size: clamp(25px, 4vw, 40px);
+}
+#services .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    grid-gap: 3rem 1rem;
+    justify-content: center;
+    align-items: center;
+}
+#services .container .cartes{
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .2);
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 265px;
+    width: 100%;
+    padding-inline: 20px;
+}
+#services .container .cartes img{
+    width: 75px;
+}
+#services .container .cartes .text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#services .container .cartes .text h2{
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+#services .container .cartes .text p{
+    text-align: center;
+}
+#contact .titles{
+    text-align: center;
+    margin-bottom: 20px;
+}
+#contact .titles span{
+    color: var(--text);
+    font-weight: 600;
+}
+#contact .titles h1{
+    font-size: clamp(25px, 4vw, 40px);
+}
+#contact form{
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    grid-gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+#contact form input{
+    border: 1px solid rgba(0, 0, 0, .1);
+    height: 50px;
+    width: 960px;
+    border-radius: 7px;
+    padding-left: 20px;
+}
+#contact form textarea{
+    border: 1px solid rgba(0, 0, 0, .1);
+    resize: none;
+    border-radius: 7px;
+    padding: 20px 0 0 20px;
+}
+#contact form button{
+    background: black;
+    color: white;
+    border-radius: 7px;
+    height: 40px;
+    width: 80px;
+    transition: .4s ease-in-out;
+}
+#contact form button:hover{
+    cursor: pointer;
+    background: var(--text);
+}
+footer{
+    background: black;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+    justify-content: center;
+    padding: 20px 0;
+}
+footer .adress a{
+    color: var(--text);
+    font-weight: 600;
+    font-size: 1.3rem;
+    transition: .4s ease-in-out;
+}
+footer .adress a:hover{
+    color: var(--logo);
+}
+footer .adress span{
+    color: white;
+    display: block;
+    font-size: .8rem;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+footer .adress span i{
+    font-size: 1.3rem;
+    padding-right: 7px;
+}
+footer .liens h3{
+    color: white;
+    margin-bottom: 10px;
+}
+footer .liens a{
+    display: flex;
+    flex-direction: column;
+    color: var(--text);
+    width: 80px;
+    transition: .4s ease-in-out;
+}
+footer .liens a:hover{
+    color: var(--logo);
+}
+footer .infos h3{
+    color: white;
+    margin-bottom: 10px;
+}
+footer .infos a{
+    display: flex;
+    flex-direction: column;
+    color: var(--text);
+    width: 210px;
+    transition: .4s ease-in-out;
+}
+footer .infos a:hover{
+    color: var(--logo);
+}
+footer .socials h3{
+    color: white;
+    margin-bottom: 10px;
+}
+footer .socials .icones a{
+    margin-right: 10px;
+}
+footer .socials .icones a i{
+    background: var(--text);
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    transition: .4s ease-in-out;
+}
+footer .socials .icones a i:hover{
+    background: var(--logo);
+}
+.fin{
+    min-height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fin p{
+    font-size: .8rem;
+}
+
+@media screen and (max-width: 998px) {
+    nav{
+        padding: 0 20px 0 20px;
+        min-height: 55px;
+    }
+    nav .menu{
+        position: absolute;
+        top: 55px;
+        left: -100%;
+        width: 280px;
+        min-height: 100vh;
+        flex-direction: column;
+        gap: 2rem 0;
+        background: white;
+        box-shadow: 1px 0 5px rgba(0, 0, 0, .3);
+        padding: 20px 0 0 20px;
+        transition: .4s ease-in-out;
+    }
+    nav .menu.active{
+        left: 0;
+    }
+    nav .menu.test{
+        background: black;
+    }
+    nav .burger{
+        display: block;
+    }
+    nav .burger #burger{
+        font-size: 2rem;
+        cursor: pointer;
+        transition: .4s ease-in-out;
+    }
+    nav .burger #burger:hover{
+        color: orangered;
+    }
+    section{
+        padding: 50px;
+    }
+    #header{
+        padding-top: 100px;
+    }
+    #header .text{
+        text-align: center;
+    }
+    #header .image{
+        margin-inline: auto;
+    }
+    #about{
+        grid-gap: 2rem 0;
+    }
+    #about .image{
+        order: 2;
+        text-align: center;
+    }
+    #about .text{
+        text-align: center;
+    }
+    #menu .container .cards{
+        padding-bottom: 5rem;
+    }
+    #contact form{
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    #contact form input{
+        width: 100%;
+    }
+    footer{
+        grid-template-columns: repeat(2, auto);
+        grid-gap: 2rem;
+        padding-inline: 20px;
+    }
+    footer .socials .icones{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
